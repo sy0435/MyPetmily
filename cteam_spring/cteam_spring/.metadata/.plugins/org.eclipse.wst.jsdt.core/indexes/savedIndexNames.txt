@@ -1,8 +1,0 @@
-INDEX VERSION 1.4+D:\cteam_spring\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-267917143.index
-2433214578.index
-3956210117.index
-276259301.index
-2375189825.index
-4282266710.index
-3810253394.index
