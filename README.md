@@ -9,7 +9,7 @@
 - Android Studio(3.5.5)
 - Material CalendarView
 
-＊Android : 화면구성
+＊Android : 화면 구성
 - 
 - 
 
@@ -19,6 +19,6 @@
 - Data Base : Oracle Databse 11g Express Edition
 - Web Server : Tomcat v8.5
 
-＊Web : 화면구성
+＊Web : 화면 구성
 - 
 - 
