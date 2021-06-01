@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btnTemperatureOn"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:background="@drawable/login_stroke"
+            android:shadowColor="@android:color/transparent"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:text="발열팩 켜기" />
+
+
+        <!-- 블루투스 버튼 -->
+        <Button
+            android:id="@+id/btnTemperatureOff"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/btnTemperatureOn"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/text_stroke"
+            android:shadowColor="@android:color/transparent"
+            android:textColor="#969696"
+            android:textSize="24sp"
+            android:text="발열팩 끄기" />
+
+
+        <!-- 온도보기 버튼 -->
+        <Button
+            android:id="@+id/btnTemperatureView"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/btnTemperatureOff"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/login_stroke"
+            android:shadowColor="@android:color/transparent"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:text="방석 온도 보기" />
+
+        <TextView
+            android:id="@+id/tvTemperatureView"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/btnTemperatureView"
+            android:layout_marginTop="10dp"
+            android:textSize="24dp"
+            android:textColor="#333333"
+            android:gravity="center"
+            android:hint="발열이 켜진 상태입니다"/>
+
+
+        <ImageButton
+            android:id="@+id/btnBluetooth"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/tvTemperatureView"
+            android:layout_marginTop="30dp"
+            android:adjustViewBounds="false"
+            android:src="@drawable/bluetooth"
+            android:scaleType="fitXY"
+            android:textColor="#ffffff" />
+
+    </RelativeLayout>
+
+</LinearLayout>

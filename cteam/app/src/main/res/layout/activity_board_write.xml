@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:layout_weight="1">
+
+                <Spinner
+                    android:id="@+id/board_write_subject"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/spinner_spinner1"
+                    android:spinnerMode="dropdown"
+                    android:entries="@array/board_write_SpinnerArray" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_weight="1">
+
+                <Spinner
+                    android:id="@+id/board_write_region1"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/spinner_spinner1"
+                    android:spinnerMode="dropdown"
+                    android:entries="@array/spinner_region"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:layout_weight="1">
+
+                <Spinner
+                    android:id="@+id/board_write_region2"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/spinner_spinner1"
+                    android:spinnerMode="dropdown" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/board_write_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@drawable/text_dashed"
+            android:textColorHint="#969696"
+            android:textSize="18dp"
+            android:hint="제목을 입력하세요." />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/board_write_title"
+            android:layout_centerVertical="true">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/board_write_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:background="@drawable/text_dashed"
+                    android:scrollbars="vertical"
+                    android:textColorHint="#969696"
+                    android:textSize="18dp"
+                    android:gravity="top"
+                    android:hint="내용을 입력하세요." />
+
+            </FrameLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative1">
+
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative2">
+
+            <LinearLayout
+                android:id="@+id/linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/board_write_filebutton"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/login_stroke"
+                        android:shadowColor="@android:color/transparent"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:text="사진 선택"/>
+
+                    <Button
+                        android:id="@+id/board_write_filecancel"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/login_stroke"
+                        android:shadowColor="@android:color/transparent"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:text="사진 삭제"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/board_write_cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_toLeftOf="@id/board_write_submit"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/text_stroke"
+                    android:shadowColor="@android:color/transparent"
+                    android:textColor="#969696"
+                    android:textSize="18sp"
+                    android:onClick="btnBoardcancel"
+                    android:text="취소" />
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/board_write_submit"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/login_stroke"
+                        android:shadowColor="@android:color/transparent"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:onClick="btnBoardinsert"
+                        android:text="글쓰기" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/board_write_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@+id/linear"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:scaleType="fitXY" />
+
+        </RelativeLayout>
+
+</LinearLayout>

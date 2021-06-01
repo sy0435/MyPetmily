@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:id="@+id/parentLayout0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="♥반려동물 수정화면♥"
+                    android:textColor="#FFB4BE"
+                    android:textSize="26dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/parentLayout1"
+                android:layout_width="130dp"
+                android:layout_height="230dp"
+                android:layout_below="@id/parentLayout0"
+                android:layout_marginRight="10dp"
+                android:padding="10dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/petPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:scaleType="fitXY" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/parentLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:paddingLeft="10dp"
+                android:layout_below="@id/parentLayout0"
+                android:layout_toRightOf="@id/parentLayout1"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/petName1"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:text="이　름 : "
+                    android:textColor="#969696"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/petname"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:layout_toRightOf="@id/petName1"
+                    android:textColorHint="#969696"
+                    android:hint="name"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/petAge1"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:layout_below="@+id/petName1"
+                    android:text="나　이 : "
+                    android:textColor="#969696"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/petage"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:layout_below="@+id/petName1"
+                    android:layout_toRightOf="@id/petAge1"
+                    android:textColorHint="#969696"
+                    android:hint="Age"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/petGender1"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:layout_below="@+id/petAge1"
+                    android:text="성　별 : "
+                    android:textColor="#969696"
+                    android:textSize="18sp" />
+
+                <!--<EditText
+                    android:id="@+id/petgender"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:layout_below="@+id/petAge1"
+                    android:layout_toRightOf="@id/petGender1"
+                    android:textColorHint="#969696"
+                    android:hint="Gender"
+                    android:inputType="text" />-->
+
+                <Spinner
+                    android:id="@+id/petgender"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/petage"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="-70dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_toEndOf="@+id/petGender1"
+                    android:layout_toRightOf="@+id/petGender1"
+                    android:background="@drawable/gender_spinner_back"
+                    android:gravity="center_vertical"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/petWeight1"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:layout_below="@+id/petGender1"
+                    android:text="몸무게 : "
+                    android:textColor="#969696"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/petweight"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:layout_below="@+id/petGender1"
+                    android:layout_toRightOf="@id/petWeight1"
+                    android:textColorHint="#969696"
+                    android:hint="Weight"
+                    android:inputType="text" />
+
+                <Button
+                    android:id="@+id/btnLoad"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/petWeight1"
+                    android:background="@drawable/text_stroke"
+                    android:shadowColor="@android:color/transparent"
+                    android:textColor="#969696"
+                    android:textSize="18sp"
+                    android:text="사진등록" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/parentLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/parentLayout1"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginRight="5dp">
+
+                                <Button
+                                    android:id="@+id/btnCancle"
+                                    android:layout_width="140dp"
+                                    android:layout_height="40dp"
+                                    android:onClick="btnCancelClicked"
+                                    android:background="@drawable/text_stroke"
+                                    android:shadowColor="@android:color/transparent"
+                                    android:textColor="#969696"
+                                    android:text="취소"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginLeft="5dp">
+
+                                <Button
+                                    android:id="@+id/btn_update"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:background="@drawable/login_stroke"
+                                    android:onClick="btnUpdateClicked"
+                                    android:shadowColor="@android:color/transparent"
+                                    android:text="수정하기"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:layout_marginTop="10dp">
+
+                        <Button
+                            android:id="@+id/btnReset"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/login_stroke"
+                            android:shadowColor="@android:color/transparent"
+                            android:text="다시작성"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

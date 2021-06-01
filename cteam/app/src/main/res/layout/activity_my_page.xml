@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <!--    <Button
+                android:id="@+id/profileBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignTop="@+id/MyPage_img"
+                android:layout_alignEnd="@+id/MyPage_img"
+                android:layout_alignRight="@+id/MyPage_img"
+                android:layout_marginTop="118dp"
+                android:layout_marginEnd="-91dp"
+                android:layout_marginRight="-91dp"
+                android:background="@drawable/profile_btn"
+                android:text="사진수정" />-->
+
+    <!--    <EditText
+            android:id="@+id/MyPage_qs"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/MyPage_pw_confirm"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/text_stroke"
+            android:drawableLeft="@drawable/outline_help_outline_black_18dp"
+            android:drawableTint="#10207E"
+            android:gravity="center_vertical"
+            android:hint="비밀번호 찾기 질문"
+            android:textSize="14sp" />-->
+
+        <TextView
+            android:id="@+id/mypage_title"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/login_stroke"
+            android:gravity="center"
+            android:text="마이페이지"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/MyPage_name"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/mypage_title"
+            android:layout_alignLeft="@+id/mypage_title"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/text_stroke"
+            android:drawableLeft="@drawable/baseline_pets_black_18dp"
+            android:drawablePadding="5dp"
+            android:drawableTint="#FFB4BE"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:text=" 이름"
+            android:textColor="#CC000000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/MyPage_id"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/MyPage_name"
+            android:layout_alignLeft="@+id/MyPage_name"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/text_stroke"
+            android:drawableLeft="@drawable/outline_person_outline_black_18dp"
+            android:drawablePadding="5dp"
+            android:drawableTint="#FFB4BE"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:text="아이디"
+            android:textColor="#CC000000"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/MyPage_pw"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/MyPage_id"
+            android:layout_alignLeft="@+id/MyPage_id"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/text_stroke"
+            android:drawableLeft="@drawable/outline_lock_black_18dp"
+            android:drawableTint="#FFB4BE"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:hint="비밀번호"
+            android:textColorHint="#969696"
+            android:inputType="textPassword"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/MyPage_pw_confirm"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/MyPage_pw"
+            android:layout_alignLeft="@+id/MyPage_pw"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/text_stroke"
+            android:drawableLeft="@drawable/outline_lock_black_18dp"
+            android:drawableTint="#FFB4BE"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:hint="비밀번호 확인"
+            android:textColorHint="#969696"
+            android:inputType="textPassword"
+            android:textSize="14sp" />
+
+        <Spinner
+            android:id="@+id/MyPage_qs"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/MyPage_pw_confirm"
+            android:layout_alignLeft="@+id/MyPage_pw_confirm"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/spinner_spinner1"
+            android:gravity="center_vertical"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/MyPage_qs_as"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/MyPage_qs"
+            android:layout_alignLeft="@+id/MyPage_qs"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/text_stroke"
+            android:drawableLeft="@drawable/outline_help_outline_black_18dp"
+            android:drawableTint="#FFB4BE"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:hint="비밀번호 찾기 답"
+            android:textColorHint="#969696"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/MyPage_phonenum"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/MyPage_qs_as"
+            android:layout_alignLeft="@+id/MyPage_qs_as"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/text_stroke"
+            android:drawableLeft="@drawable/outline_call_black_18dp"
+            android:drawableTint="#FFB4BE"
+            android:gravity="center_vertical"
+            android:drawablePadding="5dp"
+            android:hint="연락처"
+            android:textColorHint="#969696"
+            android:inputType="phone"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/MyPage_cancel"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/MyPage_phonenum"
+            android:layout_alignLeft="@+id/MyPage_phonenum"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/text_stroke"
+            android:shadowColor="@android:color/transparent"
+            android:textColor="#969696"
+            android:text="취소"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/MyPage_ok"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/MyPage_phonenum"
+            android:layout_toRightOf="@+id/MyPage_cancel"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/login_stroke"
+            android:shadowColor="@android:color/transparent"
+            android:text="수정하기"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</LinearLayout>
+

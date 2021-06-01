@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="spinnerItemStyleZoftino" parent="android:Widget.TextView.SpinnerItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:capitalize">words</item>
+        <item name="android:textSize">25dp</item>
+        <item name="android:textColor">#421a85</item>
+    </style>
+
+    <style name="spinnerDropDownItemStyleZoftino" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+        <item name="android:textSize">25dp</item>
+        <item name="android:textColor">#D2FFBCF8</item>
+        <item name="android:background">#8FD8DCDA</item>
+    </style>
+
+</resources>

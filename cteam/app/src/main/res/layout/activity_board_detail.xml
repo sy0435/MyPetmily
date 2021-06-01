@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/baoard_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/relative1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/board_detail_title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/text_dashed"
+                android:textColor="#555555"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:text="글 제목"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/relative1">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/board_detail_writer_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/dog"
+                app:civ_border_color="#969696"
+                app:civ_border_width="2dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/board_detail_writer_img">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/board_detail_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textColor="#969696"
+                        android:textSize="18sp"
+                        android:text="아이디" />
+
+                    <Button
+                        android:id="@+id/board_detail_modify"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_toLeftOf="@id/board_detail_delete"
+                        android:layout_centerVertical="true"
+                        android:onClick="board_detail_modify"
+                        android:background="@drawable/eraser"
+                        android:backgroundTint="#2E85CA" />
+
+                    <Button
+                        android:id="@+id/board_detail_delete"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:onClick="board_detail_delete"
+                        android:background="@drawable/delete"
+                        android:backgroundTint="#FD7070" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/board_detail_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textColor="#969696"
+                        android:textSize="16sp"
+                        android:text="등록시간" />
+
+                    <TextView
+                        android:id="@+id/board_detail_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@id/board_detail_region"
+                        android:layout_centerVertical="true"
+                        android:textColor="#969696"
+                        android:textSize="16sp"
+                        android:text="도시" />
+
+                    <TextView
+                        android:id="@+id/board_detail_region"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#969696"
+                        android:textSize="16sp"
+                        android:text="지역" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative3"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_margin="10dp"
+            android:layout_below="@+id/relative2"
+            android:gravity="center_vertical"
+            android:background="@drawable/text_dashed">
+
+            <ImageView
+                android:id="@+id/board_detail_image"
+                android:layout_width="140dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/catbody"
+                android:scaleType="fitXY"/>
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_toRightOf="@+id/board_detail_image"
+                    android:layout_centerVertical="true">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/board_detail_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:scrollbars="vertical"
+                            android:textColor="#555555"
+                            android:textSize="18sp"
+                            android:text="내용" />
+
+                    </FrameLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative3">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/line"
+                android:backgroundTint="#969696" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/board_detail_comment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="70dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/commentText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_alignParentBottom="true"
+            android:background="#C8C8C8">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/board_detail_comment_img"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:civ_border_color="#969696"
+                app:civ_border_width="1dp"
+                tools:src="@tools:sample/avatars" />
+
+            <EditText
+                android:id="@+id/board_detail_comment_write"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_toRightOf="@id/board_detail_comment_img"
+                android:layout_toLeftOf="@+id/board_detail_comment_submit"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:gravity="center_vertical"
+                android:background="@drawable/comment_stroke"
+                android:textColorHint="#969696"
+                android:hint="댓글을 입력하세요"
+                android:textColor="#555555"
+                android:textSize="16dp" />
+
+            <Button
+                android:id="@+id/board_detail_comment_submit"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:background="@drawable/comment_button"
+                android:shadowColor="@android:color/transparent"
+                android:layout_alignParentRight="true"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp"
+                android:text="등록" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

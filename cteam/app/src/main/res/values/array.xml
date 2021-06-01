@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="board_SpinnerArray">
+        <item>전체보기</item>
+        <item>산책</item>
+        <item>나눔</item>
+    </string-array>
+
+    <string-array name="offer_types">
+        <item>share</item>
+        <item>edit</item>
+        <item>delete</item>
+    </string-array>
+</resources>
+

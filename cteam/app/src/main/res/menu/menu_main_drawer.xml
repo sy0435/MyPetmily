@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_myPage"
+            android:icon="@drawable/nav_mypage"
+            android:title="마이페이지" />
+
+        <item
+            android:id="@+id/nav_pet"
+            android:icon="@drawable/nav_pet"
+            android:title="반려동물 선택화면"/>
+
+        <item
+            android:id="@+id/nav_board"
+            android:icon="@drawable/nav_board"
+            android:title="내가 작성한 게시물"/>
+
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/nav_question"
+            android:title="도움말" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/nav_exit"
+            android:title="로그아웃"/>
+
+    </group>
+
+</menu>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--google 지도 api 설정-->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDUe3mN0qdkPzd2vfAtCmVBwUyMwVsJJw4</string>
+
+</resources>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_sub1_add"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/relative1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/petPhotoUpdate_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:onClick="btnAddClicked"
+                android:background="@drawable/back"
+                android:backgroundTint="#444444" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="EDIT POST"
+                android:textColor="#444444"
+                android:textSize="24dp"
+                android:inputType="text"
+                android:layout_gravity="center" />
+
+            <Button
+                android:id="@+id/petPhotoUpdate_upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:onClick="btnCancelClicked"
+                android:textColor="#FFB4BE"
+                android:textSize="24dp"
+                android:background="@drawable/background_transparent"
+                android:text="UPLOAD" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative1"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp">
+
+            <ImageView
+                android:id="@+id/petPhoto"
+                android:layout_width="200dp"
+                android:layout_height="300dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitXY" />
+
+            <Button
+                android:id="@+id/petPhotoUpdate_Camera"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/petPhoto"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/outline_photo_camera_black_18dp"
+                android:backgroundTint="#FFB4BE"
+                android:layout_gravity="center_vertical" />
+
+            <Button
+                android:id="@+id/petPhotoUpdate_PhotoUpLoad"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/petPhoto"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/picture"
+                android:backgroundTint="#FFB4BE"
+                android:layout_gravity="center_vertical" />
+
+            <EditText
+                android:id="@+id/petPhotoUpdate_content"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/petPhotoUpdate_Camera"
+                android:layout_marginTop="10dp"
+                android:text=""
+                android:textColor="#444444"
+                android:textSize="18sp"
+                android:inputType="text"
+                android:layout_gravity="center_vertical" />
+
+        </RelativeLayout>
+
+</LinearLayout>

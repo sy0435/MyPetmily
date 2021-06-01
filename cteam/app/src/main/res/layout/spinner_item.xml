@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 게시판 선택시 Spinner 내부 레이아웃 설정 -->
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="15dp"
+    android:background="#00ff0000"
+    android:textColor="@color/colorPrimaryDark"
+    style="?android:attr/spinnerItemStyle"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp" />

@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#FFB4BE"
+            android:text="일정추가"
+            android:textSize="20dp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/CalendarAddInsert_txt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/title"
+            android:layout_marginBottom="10dp"
+            android:textColor="#969696"
+            android:text="아이콘 색상 선택"
+            android:textSize="20sp"
+            android:layout_marginLeft="15dp"/>
+
+        <LinearLayout
+            android:id="@+id/CalendarAddInsert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/CalendarAddInsert_txt1"
+            android:weightSum="8">
+
+        <ImageView
+            android:id="@+id/CalendarAddInsert_color1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/CalendarAddInsert_txt1"
+            android:src="@drawable/ic_dot"
+            app:tint="#FF0000"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/CalendarAddInsert_color2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/CalendarAddInsert_txt1"
+            android:layout_toRightOf="@id/CalendarAddInsert_color1"
+            android:src="@drawable/ic_dot"
+            app:tint="#FF9800"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/CalendarAddInsert_color3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/CalendarAddInsert_txt1"
+            android:layout_toRightOf="@id/CalendarAddInsert_color2"
+            android:src="@drawable/ic_dot"
+            app:tint="#FFC107"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/CalendarAddInsert_color4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/CalendarAddInsert_txt1"
+            android:layout_toRightOf="@id/CalendarAddInsert_color3"
+            android:src="@drawable/ic_dot"
+            app:tint="#41AF39"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/CalendarAddInsert_color5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/CalendarAddInsert_txt1"
+            android:layout_toRightOf="@id/CalendarAddInsert_color4"
+            android:src="@drawable/ic_dot"
+            app:tint="#3F51B5"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/CalendarAddInsert_color6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/CalendarAddInsert_txt1"
+            android:layout_toRightOf="@id/CalendarAddInsert_color5"
+            android:src="@drawable/ic_dot"
+            app:tint="#A566FF"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/CalendarAddInsert_color7"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/CalendarAddInsert_txt1"
+            android:layout_toRightOf="@id/CalendarAddInsert_color6"
+            android:src="@drawable/ic_dot"
+            app:tint="#FFB2F5"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/CalendarAddInsert_color8"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/CalendarAddInsert_txt1"
+            android:layout_toRightOf="@id/CalendarAddInsert_color7"
+            android:src="@drawable/ic_dot"
+            app:tint="#8C8C8C"
+            android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/CalendarAddInsert_txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/CalendarAddInsert"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="아이콘 선택"
+            android:textColor="#969696"
+            android:textSize="20sp"
+            android:layout_marginLeft="15dp"/>
+
+        <LinearLayout
+            android:id="@+id/CalendarAddInsert_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="8"
+            android:layout_below="@+id/CalendarAddInsert_txt2">
+
+        <ImageView
+            android:id="@+id/CalendarAddInsert_icon1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/CalendarAddInsert_txt2"
+            android:src="@drawable/sample_icon_1"
+            app:tint="#000000"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/CalendarAddInsert_icon2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/CalendarAddInsert_txt2"
+            android:layout_toRightOf="@+id/CalendarAddInsert_icon1"
+            android:src="@drawable/sample_icon_2"
+            app:tint="#000000"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/CalendarAddInsert_icon3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/CalendarAddInsert_txt2"
+            android:layout_toRightOf="@+id/CalendarAddInsert_icon2"
+            android:src="@drawable/sample_icon_3"
+            app:tint="#000000"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/CalendarAddInsert_icon4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/CalendarAddInsert_txt2"
+            android:layout_toRightOf="@+id/CalendarAddInsert_icon3"
+            android:src="@drawable/sample_icon_4"
+            app:tint="#000000"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/CalendarAddInsert_icon5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/CalendarAddInsert_txt2"
+            android:layout_toRightOf="@+id/CalendarAddInsert_icon4"
+            android:src="@drawable/sample_icon_5"
+            app:tint="#000000"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/CalendarAddInsert_icon6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/CalendarAddInsert_txt2"
+            android:layout_toRightOf="@+id/CalendarAddInsert_icon5"
+            android:src="@drawable/sample_icon_6"
+            app:tint="#000000"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/CalendarAddInsert_icon7"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/CalendarAddInsert_txt2"
+            android:layout_toRightOf="@+id/CalendarAddInsert_icon6"
+            android:src="@drawable/sample_icon_7"
+            app:tint="#000000"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/CalendarAddInsert_icon8"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/CalendarAddInsert_txt2"
+            android:layout_toRightOf="@+id/CalendarAddInsert_icon7"
+            android:src="@drawable/sample_icon_8"
+            app:tint="#000000"
+            android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/CalendarAddInsert_txt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/CalendarAddInsert_icon"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="메모"
+            android:textColor="#969696"
+            android:textSize="20sp"
+            android:layout_marginLeft="15dp"/>
+
+        <EditText
+            android:id="@+id/CalendarAddInsert_memo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/CalendarAddInsert_txt3"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/CalendarAddInsert_txt4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/CalendarAddInsert_memo"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#969696"
+            android:text="시간"
+            android:textSize="20sp"
+            android:layout_marginLeft="15dp" />
+
+        <TextView
+                android:id="@+id/CalendarAddInsert_Time"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal|center_vertical"
+              android:layout_below="@+id/CalendarAddInsert_memo"
+
+                 android:text="8시"
+                android:textSize="20dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="40dp"/>
+
+            <NumberPicker
+                android:id="@+id/petbarPicker"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_below="@+id/CalendarAddInsert_memo"
+                android:layout_toRightOf="@+id/CalendarAddInsert_Time"
+                android:layout_marginTop="20dp"
+
+                />
+            <TextView
+                android:id="@+id/CalendarAddInsert_minute"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="분"
+                android:textSize="20dp"
+                android:layout_below="@+id/CalendarAddInsert_memo"
+                android:layout_toRightOf="@+id/petbarPicker"
+                android:layout_marginTop="40dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/petbarPicker"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/CalendarAddInsert_cancel"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/text_stroke"
+            android:shadowColor="@android:color/transparent"
+            android:textColor="#969696"
+            android:text="취소"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/CalendarAddInsert_ok"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/login_stroke"
+            android:shadowColor="@android:color/transparent"
+            android:textColor="#FFFFFF"
+            android:text="등록"
+            android:textSize="20dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

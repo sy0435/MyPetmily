@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/tab1"
+        android:icon="@drawable/calendar111"
+        android:enabled="true"
+        android:title="캘린더"
+        />
+    <!--누르면 이벤트를 탈건지 제일처음 활성화되어있는것?-->
+
+    <item
+        android:id="@+id/tab3"
+        android:icon="@drawable/diary111"
+        android:title="펫다이어리"
+        />
+
+    <item
+        android:id="@+id/tab2"
+        android:icon="@drawable/house111"
+        android:title="IoT 펫방석"
+        />
+    <!--enalbed:제일처음 활성화되어있는것-->
+    
+    <item
+        android:id="@+id/tab4"
+        android:icon="@drawable/walk111"
+        android:title="게시판"
+        />
+
+</menu>

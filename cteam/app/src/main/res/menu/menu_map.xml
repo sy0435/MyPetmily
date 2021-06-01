@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/map_hospital"
+        android:icon="@drawable/map_hospital"
+        android:enabled="true"
+        android:title="병원"
+        />
+    <item
+        android:id="@+id/map_hair"
+        android:icon="@drawable/map_hair"
+        android:enabled="true"
+        android:title="미용실"
+        />
+    <item
+        android:state_checked="true"
+        android:id="@+id/map_park"
+        android:icon="@drawable/map_park"
+        android:enabled="true"
+        android:title="공원"
+        />
+</menu>

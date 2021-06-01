@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/login_img1"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/cteam_logo1" />
+
+        <EditText
+            android:id="@+id/login_id"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/login_img1"
+            android:layout_alignLeft="@id/login_img1"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/text_stroke"
+            android:drawableLeft="@drawable/outline_person_outline_black_18dp"
+            android:drawableTint="#FFB4BE"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColorHint="#969696"
+            android:textSize="14sp"
+            android:hint="아이디를 입력하세요"/>
+
+        <EditText
+            android:id="@+id/login_pw"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/login_id"
+            android:layout_alignLeft="@id/login_img1"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/text_stroke"
+            android:drawableLeft="@drawable/outline_lock_black_18dp"
+            android:drawableTint="#FFB4BE"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:textColorHint="#969696"
+            android:textSize="14sp"
+            android:hint="비밀번호를 입력하세요"/>
+
+        <Button
+            android:id="@+id/login_btn1"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/login_pw"
+            android:layout_alignLeft="@+id/login_img1"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/login_stroke"
+            android:shadowColor="@android:color/transparent"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:text="로그인하기"/>
+
+<!--
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/google_login"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/login_btn1"
+            android:layout_alignLeft="@+id/login_img1"
+            android:layout_marginTop="10dp"
+            />
+-->
+
+        <Button
+            android:id="@+id/login_btn2"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/login_btn1"
+            android:layout_alignLeft="@+id/login_img1"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/text_stroke"
+            android:shadowColor="@android:color/transparent"
+            android:textColor="#969696"
+            android:textSize="16sp"
+            android:text="비밀번호찾기"/>
+
+        <Button
+            android:id="@+id/login_btn3"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/login_btn1"
+            android:layout_alignRight="@+id/login_img1"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/text_stroke"
+            android:shadowColor="@android:color/transparent"
+            android:textColor="#969696"
+            android:textSize="16sp"
+            android:text="회원가입"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
