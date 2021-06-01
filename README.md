@@ -19,6 +19,7 @@
 - 시간 순서대로 일정을 RecyclerView 정렬, 캘린더 가시성을 고려해 최대 3개까지 설정
 - 이미 등록된 일정을 선택하여 수정 버튼을 통해 수정페이지로 이동
 - 이미 등록된 일정을 선택하여 삭제 버튼으로 간단하게 삭제
+- 자동 커밋, 실시간 동기화
 
 ＊Web : Tech stack & Open-source libraries
 - Tool : Eclipse photon (4.8)
