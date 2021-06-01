@@ -1,5 +1,5 @@
-MyPetmily(2020/07/29~2020/10/23)
-반려동물의 스케줄을 기록하고 관리할 수 있다.
+＊MyPetmily (2020/07/29~2020/10/23)
+＊반려동물의 스케줄을 기록하고 관리할 수 있다.
 
 ＊Android : Tech stack & Open-source libraries
 - Tool : Eclipse photon (4.8)
