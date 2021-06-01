@@ -16,7 +16,7 @@
 - 화면 Fragment 전환 및 Bundle로 데이터 값 전달
 - 캘린더에 아이콘 삽입이 가능한 외부 Library인 Material CalendarView를 이용
 - 날짜를 선택하여 일정 추가, 아이콘 선택과 간단한 메모 추가
-- 
+
 ![캘린더2](https://user-images.githubusercontent.com/69283479/120292613-6a409b00-c2ff-11eb-971e-01f3a9f2de4c.png)
 - 시간 순서대로 일정을 RecyclerView 정렬, 캘린더 가시성을 고려해 최대 3개까지 설정
 - 이미 등록된 일정을 선택하여 수정 버튼을 통해 수정페이지로 이동
