@@ -1,0 +1,309 @@
+package com.cteam.app.controller;
+
+import java.io.File;
+import java.io.UnsupportedEncodingException;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartRequest;
+
+import com.cteam.app.command.AnCommand;
+import com.cteam.app.command.BoardDeleteCommand;
+import com.cteam.app.command.BoardDetailCommand;
+import com.cteam.app.command.BoardSelectCommand;
+import com.cteam.app.command.BoardUpdateCommand;
+import com.cteam.app.command.boarddetailupdateNoCommand;
+import com.cteam.app.command.boardinsertCommand;
+
+@Controller
+public class BoardController {
+	
+	AnCommand command;
+
+	//게시판 메인
+	@RequestMapping(value="/boardselect", method = {RequestMethod.GET, RequestMethod.POST} )
+	public String boardselect(HttpServletRequest req, Model model) {
+		System.out.println("컨트롤러 : boardselect()");
+		
+		command = new BoardSelectCommand();
+		command.execute(model);
+		
+		return "board/boardselect";
+	}
+	
+	
+	//게시판 글쓰기 요청
+	@RequestMapping(value="/boardinsert", method = {RequestMethod.GET, RequestMethod.POST}  )
+	public String boardinsert(HttpServletRequest req, Model model){
+		System.out.println("boardinsert()");	
+		
+		try {
+			req.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} 
+
+		String member_id = (String) req.getParameter("member_id");
+		String board_subject = (String) req.getParameter("subject");
+		String board_title = (String) req.getParameter("title");
+		String board_content = (String) req.getParameter("content");
+		String board_city = (String) req.getParameter("city");
+		String board_region = (String) req.getParameter("region");
+		String board_imagepath = (String) req.getParameter("dbImgPath");
+		String Petimage_path = (String) req.getParameter("Petimage_path");
+		String petname = (String) req.getParameter("petname");
+
+
+
+		System.out.println("컨트롤러boardinsert : " +member_id+board_subject+board_title+
+				board_content+board_city+board_region+board_imagepath+Petimage_path + petname);
+		
+		model.addAttribute("member_id", member_id);
+		model.addAttribute("board_subject", board_subject);
+		model.addAttribute("board_title", board_title);
+		model.addAttribute("board_content", board_content);
+		model.addAttribute("board_city", board_city);
+		model.addAttribute("board_region", board_region);
+		model.addAttribute("board_imagepath", board_imagepath);
+		model.addAttribute("Petimage_path", Petimage_path);
+		model.addAttribute("petname", petname);
+	
+		MultipartRequest multi = (MultipartRequest) req;
+		MultipartFile file = multi.getFile("image");
+		
+		if(file != null) {
+			String fileName = file.getOriginalFilename();
+			System.out.println(fileName);
+			
+			// 디렉토리 존재하지 않으면 생성
+			makeDir(req);	
+				
+			if(file.getSize() > 0){			
+				String realImgPath = req.getSession().getServletContext()
+						.getRealPath("/resources/");
+				
+				System.out.println( fileName + " : " + realImgPath);
+				System.out.println( "fileSize : " + file.getSize());					
+
+			 	try {
+			 		// 이미지파일 저장
+					file.transferTo(new File(realImgPath, fileName));										
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			
+			}else{
+				// 이미지파일 실패시
+				fileName = "FileFail.jpg";
+				String realImgPath = req.getSession().getServletContext()
+						.getRealPath("/resources/" + fileName);
+				System.out.println(fileName + " : " + realImgPath);
+						
+			}			
+			
+		}
+			
+			
+		command = new boardinsertCommand();
+		command.execute(model);
+
+		return "board/boardinsert";
+	}
+
+	
+	//게시판 상세보기 요청
+	@RequestMapping(value="/boarddetail", method = {RequestMethod.GET, RequestMethod.POST} )
+	public String boarddetail(HttpServletRequest req, Model model) {
+		System.out.println("boarddetail()");
+
+//		try {
+//			req.setCharacterEncoding("UTF-8");
+//		} catch (UnsupportedEncodingException e) {
+//			e.printStackTrace();
+//		}
+//
+//		int board_num = Integer.parseInt(req.getParameter("num"));
+//		String member_id = req.getParameter("member_id");
+//		System.out.println("컨트롤러 boarddetail :" + board_num);
+		model.addAttribute("board_num", req.getParameter("board_num"));	
+//		model.addAttribute("board_num", reg.getParameter("board_num"));
+		model.addAttribute("member_id", req.getParameter("member_id"));
+//		model.addAttribute("member_id", member_id);
+		command = new BoardDetailCommand();
+		command.execute(model);
+
+		return "board/boarddetail";
+	}
+	
+	//게시판 수정요청
+	@RequestMapping(value="/boarddetailupdate", method = {RequestMethod.GET, RequestMethod.POST})
+	public void boarddetailupdate(HttpServletRequest req, Model model){
+		System.out.println("boarddetailupdate()");	
+		
+		try {
+			req.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		String board_num2 = (String) req.getParameter("board_num2");
+		String board_subject = (String) req.getParameter("board_subject");
+		String board_city = (String) req.getParameter("board_region1");
+		String board_region = (String) req.getParameter("board_region2");
+		String board_title = (String) req.getParameter("board_title");
+		String board_content = (String) req.getParameter("board_content");
+		String dbImgPath = (String) req.getParameter("dbImgPath");
+		String pDbImgPath = (String) req.getParameter("pDbImgPath");
+		
+		System.out.println(board_num2);
+		System.out.println(board_subject);
+		System.out.println(board_city);
+		System.out.println(board_region);
+		System.out.println(board_title);
+		System.out.println(board_content);
+		System.out.println("Sub1Update:dbImgPath " + dbImgPath);
+		System.out.println("Sub1Update:pDbImgPath " + pDbImgPath);
+		
+		model.addAttribute("board_num2", board_num2);
+		model.addAttribute("board_subject", board_subject);
+		model.addAttribute("board_city", board_city);
+		model.addAttribute("board_region", board_region);
+		model.addAttribute("board_title", board_title);
+		model.addAttribute("board_content", board_content);
+		model.addAttribute("dbImgPath", dbImgPath);
+		
+		// 이미지가 서로 같으면 삭제하지 않고 다르면 기존이미지 삭제
+			if(!dbImgPath.equals(pDbImgPath)){			
+				
+				String pFileName = req.getParameter("pDbImgPath").split("/")[req.getParameter("pDbImgPath").split("/").length -1];
+				String delDbImgPath = req.getSession().getServletContext().getRealPath("/resources/" + pFileName);
+				
+				File delfile = new File(delDbImgPath);
+				System.out.println(delfile.getAbsolutePath());
+				
+		        if(delfile.exists()) {
+		        	boolean deleteFile = false;
+		            while(deleteFile != true){
+		            	deleteFile = delfile.delete();
+		            }	            
+		            
+		        }//if(delfile.exists())
+			
+			}//if(!dbImgPath.equals(pDbImgPath))  
+			
+			MultipartRequest multi = (MultipartRequest)req;
+			MultipartFile file = null;
+			
+			file = multi.getFile("image");
+				
+			if(file != null) {
+				String fileName = file.getOriginalFilename();
+				System.out.println(fileName);
+				
+				// 디렉토리 존재하지 않으면 생성
+				makeDir(req);	
+					
+				if(file.getSize() > 0){			
+					String realImgPath = req.getSession().getServletContext()
+							.getRealPath("/resources/");
+					
+					System.out.println( fileName + " : " + realImgPath);
+					System.out.println( "fileSize : " + file.getSize());					
+													
+				 	try {
+				 		// 이미지파일 저장
+						file.transferTo(new File(realImgPath, fileName));						
+					} catch (Exception e) {
+						e.printStackTrace();
+					} 
+										
+				}else{
+					fileName = "FileFail.jpg";
+					String realImgPath = req.getSession().getServletContext()
+							.getRealPath("/resources/" + fileName);
+					System.out.println(fileName + " : " + realImgPath);
+							
+				}			
+				
+			}
+				
+			command = new BoardUpdateCommand();
+			command.execute(model);		
+				
+	}	
+	
+	@RequestMapping(value="/boarddetailupdateNo", method = {RequestMethod.GET, RequestMethod.POST})
+	public void boarddetailupdateNo(HttpServletRequest req, Model model){
+		System.out.println("boarddetailupdateNo()");	
+		
+		try {
+			req.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} 
+		
+		String board_num2 = (String) req.getParameter("board_num2");
+		String board_subject = (String) req.getParameter("board_subject");
+		String board_city = (String) req.getParameter("board_region1");
+		String board_region = (String) req.getParameter("board_region2");
+		String board_title = (String) req.getParameter("board_title");
+		String board_content = (String) req.getParameter("board_content");
+		
+		model.addAttribute("board_num2", board_num2);
+		model.addAttribute("board_subject", board_subject);
+		model.addAttribute("board_city", board_city);
+		model.addAttribute("board_region", board_region);
+		model.addAttribute("board_title", board_title);
+		model.addAttribute("board_content", board_content);
+		
+		command = new boarddetailupdateNoCommand();
+		command.execute(model);
+	}	
+	
+	//게시판 삭제요청
+	@RequestMapping(value="/boarddelete", method = {RequestMethod.GET, RequestMethod.POST})
+	public void anDeleteMulti(HttpServletRequest req, Model model){
+		System.out.println("boarddelete()");	
+		
+		model.addAttribute("board_num2", req.getParameter("board_num2"));		
+				
+		System.out.println((String)req.getParameter("board_num2"));
+		System.out.println((String)req.getParameter("delDbImgPath"));
+		
+		String pFileName = req.getParameter("delDbImgPath").split("/")[req.getParameter("delDbImgPath").split("/").length -1];
+		String delDbImgPath = req.getSession().getServletContext().getRealPath("/resources/" + pFileName);		
+		
+		// 이미지 파일지우기
+		File delfile = new File(delDbImgPath);
+		System.out.println(delfile.getAbsolutePath());
+		
+        if(delfile.exists()) {
+            System.out.println("Sub1Del:pDelImagePath " + delfile.exists());
+            boolean deleteFile = false;
+            while(deleteFile != true){
+            	deleteFile = delfile.delete();
+            }     
+        }	
+		
+		command = new BoardDeleteCommand();
+		command.execute(model);	
+		
+	}
+	
+	
+	public void makeDir(HttpServletRequest req){
+		File f = new File(req.getSession().getServletContext().getRealPath("/resources"));
+		if(!f.isDirectory()){
+		f.mkdir();
+		}	
+	}
+	
+	
+}
