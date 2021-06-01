@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="admin.mapper">
+<insert id="item_insert" >
+<!-- <insert id="item_insert" USEGENERATEDKEYS="TRUE" KEYCOLUMN=ITEM_NUM KEYPROPERTY="ITEM_NUM"> -->
+ <selectKey keyProperty="item_num" resultType="int" order="AFTER">
+    select SELL_ITEM_SEQ.currval FROM DUAL
+  </selectKey>
+	insert into sell_item (item_code, item_name, item_price, item_imgpath, item_content, item_content_imgpath )
+	values( #{item_code}, #{item_name}, #{item_price}, #{item_imgpath, jdbcType=VARCHAR}, #{item_content}, #{item_content_imgpath, jdbcType=VARCHAR} )
+</insert>
+<insert id="item_option_insert">
+	<foreach collection="option_name" item="option"  separator=" " 
+	open="insert all" close="SELECT * FROM DUAL">
+	into sell_item_option (item_num, item_code, option_name)
+	values( #{item_num}, #{item_code}, #{option} )
+    </foreach>
+</insert>
+
+<select id="total" resultType="integer">
+	select count(*) from sell_item
+</select>
+
+<select id="list" resultType="admin.ItemListVO">
+	select n.* from (select n.*, rownum no from 
+	(select * from sell_item)  n order by no desc) n
+	where no between #{beginList} and #{endList}
+</select>
+
+<select id="membertotal" resultType="integer">
+	select count(*) from memberjoin
+</select>
+<select id="memberlist" resultType="member.MemberVO">
+	select n.* from (select n.*, rownum no from 
+	(select * from memberjoin  where not member_id in ('admin'))  n order by no desc) n
+	where no between #{beginList} and #{endList}
+</select>
+                                                            
+<select id="detail" resultType="member.MemberVO">
+	select * from memberjoin where member_id = #{member_id}
+</select>
+
+<select id="orderlist" resultType="order.OrderListVO">
+select member_id, order_num, order_date, order_state
+from orderlist order by order_seq desc
+</select>
+<select id="orderlist_item" resultType="order.ItemVO">
+select order_num, o.item_num, o.option_info, item_name, item_price, item_imgpath, item_content_imgpath
+from orderlist_goods o, sell_item p 
+where order_num = #{order_num}
+and o.item_num = p.item_num 
+order by order_num desc,  o.item_num
+</select>
+
+<select id="optionlist" resultType="admin.OptionVO">
+	select *
+	from sell_item_option
+	where item_num = #{item_num}
+</select>
+
+<select id="itemmodify" resultType="admin.SellItemVO">
+	select * from sell_item
+	where item_num = #{item_num}
+</select>
+
+<delete id="optionDelete">
+	delete from sell_item_option where item_num = #{item_num}
+</delete>
+ 
+<update id="update">
+	update sell_item set item_code = #{item_code}, item_name = #{item_name}, item_price = #{item_price},item_imgpath = #{item_imgpath, jdbcType=VARCHAR}, 
+	item_content = #{item_content }, item_content_imgpath = #{item_content_imgpath, jdbcType=VARCHAR}
+	where item_num = #{item_num}
+</update>
+<insert id="option_Re_insert">
+	<foreach collection="option_name" item="option"  separator=" " 
+	open="insert all" close="SELECT * FROM DUAL">
+	into sell_item_option (item_num, item_code, option_name)
+	values( #{item_num}, #{item_code, jdbcType=VARCHAR}, #{option, jdbcType=VARCHAR} )
+    </foreach>
+</insert>
+
+<select id="orderDetail" resultType="admin.DetailVO">
+	select *
+	from orderlist
+	where order_num = #{order_num}
+	order by order_date desc
+</select>
+
+<select id="detailList_item" resultType="order.ItemVO">
+	select order_num, o.item_num, o.option_info, item_name, item_price, item_imgpath, item_content_imgpath
+	from orderlist_goods o, sell_item p 
+	where order_num = #{order_num}
+	and o.item_num = p.item_num 
+	order by order_num desc, o.item_num
+</select>
+
+<delete id="item_delete">
+	delete from sell_item where item_num = #{item_num}
+</delete>
+
+<select id="code_check" resultType="integer" >
+	select COUNT(*) from sell_item where item_code = #{code }
+</select>
+
+<update id="state">
+	update orderlist set order_state = #{order_state}
+	where order_num = #{order_num}
+</update>
+
+</mapper>

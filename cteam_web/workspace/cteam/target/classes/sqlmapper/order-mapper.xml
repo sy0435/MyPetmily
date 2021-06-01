@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="order.mapper">
+	
+	
+	
+<select id="orderlist" resultType="order.OrderVO">
+	   select o.*, g.option_info,g.item_num
+       from orderlist o, orderlist_goods g
+       where o.order_num=#{order_num}
+       AND o.order_num=g.order_num
+       
+</select>	
+	
+<select id="order_show" resultType="shop.ShopVO">
+	select * from sell_item where item_num = #{item_num}
+</select>	
+	
+	
+<insert id="order_insert">	
+ <selectKey keyProperty="order_num" resultType="string" order="AFTER">
+    select order_num FROM orderlist where order_num = #{order_num}
+  </selectKey>
+	insert into orderlist (order_seq,order_num, member_id, member_phonenum, member_name,order_date,shipping_message,shipping_address, shipping_phonenum,
+				shipping_name, order_state,shipping_address2,shipping_post,member_email,pay)
+		values( order_list_seq.nextval, #{order_num}, #{member_id}, #{member_phonenum}, #{member_name}, sysdate, #{shipping_message, jdbcType=VARCHAR},#{shipping_address},
+		#{shipping_phonenum},#{shipping_name},#{order_state},#{shipping_address2},#{shipping_post},#{member_email},#{pay} )
+</insert>
+
+<insert id="order_goods_insert">
+ 
+	insert into orderlist_goods (orderlist_goods_num, order_num, item_num, option_info)
+	values( orderlist_goods_seq.nextval, #{order_num} , #{item_num}, #{option_info})
+  
+</insert>
+	
+	
+	
+	
+	
+</mapper>

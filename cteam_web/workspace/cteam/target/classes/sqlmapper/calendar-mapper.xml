@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="calendar.mapper">
+
+<select id="calendar" resultType="calendar.CalendarVO">
+select * 
+from calendar
+where petname in (select petname from petadd where member_id=#{id})
+
+</select>
+
+<select id="petlist" resultType="String">
+select distinct(petname) 
+from calendar
+where petname in (select petname from petadd where member_id=#{id})
+</select>
+
+</mapper>

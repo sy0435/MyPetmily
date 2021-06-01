@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member.mapper">
+	
+	<select id="idFind" resultType="String">
+		select member_id from memberjoin where member_name=#{member_name} and member_phonenum = #{member_phonenum}
+	</select>
+	
+	<insert id="join">
+		insert into memberjoin(member_name,member_id,member_pw,member_phonenum,member_question,member_answer,member_address,member_address2,member_post,member_email)
+		values(#{member_name}, #{member_id},#{member_pw},#{member_phonenum},#{member_question},#{member_answer},#{member_address},#{member_address2},#{member_post},#{member_email})
+	</insert>
+	
+	<select id="login" resultType="member.MemberVO">
+		select * from memberjoin where member_id= #{id} and member_pw = #{pwd}
+	</select>
+	
+	<select id="id_check" resultType="integer">
+		select COUNT(*) from memberjoin where member_id= #{userid}
+	</select>
+	
+	<select id="emailFind" resultType="integer">
+		select COUNT(*) from memberjoin where member_email = #{member_email}
+	</select>
+
+	<update id="pwChange">
+		update memberjoin set member_pw = #{key} where member_id = #{member_id}
+	</update>
+
+</mapper>

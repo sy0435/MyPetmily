@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mypage.mapper">
+
+<select id="orderlist" resultType="order.OrderListVO">
+select order_num, order_date, order_state
+from orderlist where member_id = #{member_id} order by order_seq desc
+
+</select>
+
+<select id="orderlist_item" resultType="order.ItemVO">
+select order_num, o.item_num, o.option_info, item_name, item_price, item_imgpath, item_content_imgpath
+from orderlist_goods o, sell_item p 
+where order_num = #{order_num}
+and o.item_num = p.item_num 
+order by order_num desc,  o.item_num
+</select>
+
+<select id="orderstate" resultType="order.StateVO">
+SELECT DISTINCT (SELECT COUNT(order_state) from orderlist where order_state='상품준비중' and member_id = #{member_id}) pre,
+(SELECT COUNT(order_state) from orderlist where order_state='배송중' and member_id = #{member_id}) ship,
+(SELECT COUNT(order_state) from orderlist where order_state='배송완료' and member_id = #{member_id}) finish
+from orderlist
+where member_id = #{member_id}
+</select>
+
+<select id="myboard" resultType="mypage.WrtieVO">
+	select board_subject, board_title, board_date, board_num
+	from board
+	where member_id = #{member_id}
+	<!-- order by board_date desc -->
+</select>
+
+<select id="mycomment" resultType="mypage.CommentVO">
+	select content, writedate, comment_num
+	from board_comment
+	where member_id = #{member_id}
+	<!-- order by writedate desc -->
+</select>
+
+<update id="update">
+	update memberjoin set member_pw = #{member_pw}, member_name = #{member_name},member_phonenum = #{member_phonenum},
+	member_question = #{member_question},member_answer = #{member_answer}, member_email = #{member_email},
+	member_address = #{member_address}, member_address2 = #{member_address2}, member_post =#{member_post}
+	where member_id = #{member_id}
+</update>
+</mapper>

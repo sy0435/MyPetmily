@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="shop.mapper">
+
+
+<select id="member_info" resultType="member.MemberVO">
+	select * from memberjoin where member_id = #{member_id}
+</select>
+
+<sql id="search_where">
+<if test="search!=null and (search=='item_name' or search=='item_content')">
+	where ${search} like '%' || #{keyword} || '%'	
+</if> 
+<if test="search!=null and search=='all'">
+	where item_name like '%' || #{keyword} || '%'
+	or item_content like '%' || #{keyword} || '%'
+</if>
+
+</sql>
+	<delete id="delete">
+		delete from sell_item where item_num = #{item_num}
+	</delete>
+
+
+	<select id="detail" resultType="shop.ShopVO">
+		select s.*, o.option_name 
+		from sell_item s, sell_item_option o
+		where s.item_num = #{item_num}
+		  AND s.item_num = o.item_num(+)
+		
+        
+	</select>
+
+
+	<select id="total" resultType="Integer">
+		select count(*)	
+		from sell_item <include refid="search_where"/>
+	</select>
+	
+	<select id="list" resultType="shop.ShopVO">
+	
+	<!--  
+		select n.*, s.option_name
+       from (select rownum no, n.* 
+       from (select *
+                from sell_item
+                <include refid="search_where"/> 
+                order by item_num desc) n
+       where rownum between #{beginList} and #{endList}) n LEFT OUTER JOIN sell_item_option s
+       ON n.item_num=s.item_num
+       order by n.item_num desc
+	-->
+	select * from 
+       (select n.*, rownum no from (select * from sell_item n <include refid="search_where"/>  order by n.item_num desc) n)
+       where no between #{beginList} and #{endList}    
+        
+	</select>
+
+
+
+</mapper>

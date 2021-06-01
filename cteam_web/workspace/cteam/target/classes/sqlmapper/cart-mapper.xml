@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cart.mapper">
+
+	<delete id="cart_item_delete">
+		delete from cart where cart_num = #{cart_num}
+	</delete>
+
+
+	<delete id="delete_cart">
+		delete from cart where member_id = #{member_id}
+	</delete>
+	
+	<!-- 카트 정보 뿌려줄때 -->
+	<select id="cart_select" resultType="Basket.CartVO">
+		select * 
+		from cart 
+		where member_id = #{member_id}
+		order by cart_num desc
+	</select>
+	
+	<select id="cartlist_item" resultType="order.ItemVO">
+		select item_num, item_name, item_imgpath,item_price
+		from sell_item
+		where item_num = #{item_num}
+		order by item_num desc
+	</select>
+	
+	<!-- 카트에 담았을때-->
+	<insert id="cart_insert">
+		insert into cart (cart_num,member_id,item_num,option_info)
+		values(cart_seq.nextval, #{member_id}, #{item_num}, #{option_info})
+	</insert>
+</mapper>

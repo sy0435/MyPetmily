@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="qna.mapper">
+
+<!-- QnA 목록 조회 -->
+<select id="qna_list" resultType="qna.QnaVO">
+SELECT member_id, qna_title, qna_content, qna_num
+FROM qna
+ORDER BY qna_num
+</select>
+
+<!-- QnA 작성 -->
+<insert id="qna_regist">
+INSERT INTO qna (member_id, qna_title, qna_content)
+VALUES (#{member_id}, #{qna_title}, #{qna_content})
+</insert>
+
+<!-- QnA 질문수정 -->
+<update id="qna_update_title">
+UPDATE qna SET qna_title = #{qna_title}
+WHERE qna_num = #{qna_num}
+</update>
+
+<!-- QnA 답변수정 -->
+<update id="qna_update_content">
+UPDATE qna SET qna_content = #{qna_content}
+WHERE qna_num = #{qna_num}
+</update>
+
+<!-- QnA 삭제 -->
+<delete id="qna_delete">
+DELETE FROM qna
+WHERE qna_num = #{qna_num}
+</delete>
+
+</mapper>
