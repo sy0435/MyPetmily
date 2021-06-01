@@ -1,7 +1,7 @@
-＊MyPetmily (2020/07/29~2020/10/23)
-＊반려동물의 스케줄을 기록하고 관리할 수 있다.
+◈MyPetmily (2020/07/29~2020/10/23)
+◈반려동물의 스케줄을 기록하고 관리할 수 있다.
 
-＊Android : Tech stack & Open-source libraries
+◈Android : Tech stack & Open-source libraries
 - Tool : Eclipse photon (4.8)
 - Spring Tool Suite4 v4.7.1 (Spring legacy)
 - Data Base : Oracle Databse 11g Express Edition
@@ -9,7 +9,7 @@
 - Android Studio(3.5.5)
 - Material CalendarView
 
-＊Android : 화면구성(Calendar)
+◈Android : 화면구성(Calendar)
 
 ![캘린더1](https://user-images.githubusercontent.com/69283479/120292606-690f6e00-c2ff-11eb-97e9-4346bc2162db.png)
 - 내가 등록한 반려동물의 일정을 기록한 캘린더를 불러옴
@@ -23,18 +23,18 @@
 - 이미 등록된 일정을 선택하여 삭제 버튼으로 간단하게 삭제
 - 자동 커밋, 실시간 동기화
 
-＊Web : Tech stack & Open-source libraries
+◈Web : Tech stack & Open-source libraries
 - Tool : Eclipse photon (4.8)
 - Spring Tool Suite4 v.4.7.1 (Spring legacy)
 - Data Base : Oracle Databse 11g Express Edition
 - Web Server : Tomcat v8.5
 
-＊Web : 화면구성(회사소개, QnA, 커뮤니티 게시판)
+◈Web : 화면구성(회사소개, QnA, 커뮤니티 게시판)
 ![웹](https://user-images.githubusercontent.com/69283479/120397408-40c15700-c373-11eb-9b7d-f78dd0758a40.png)
-- 커뮤니티 게시판 글 읽기, 쓰기, 수정, 삭제. 관리자 모드 추가
+- 커뮤니티 게시판 글 읽기, 쓰기, 수정, 삭제 & 관리자 모드 추가
+- 필수 입력 양식 유효성 검사
 - 사진 첨부, 첨부된 사진 미리 보기
-- ajax 통신으로 댓글 작성
 - 삼중 셀렉트 박스 검색(게시판 분류, 지역, 지역 상세), 글 제목 본문 내용, 작성자 검색
 - 페이징 처리
-- ajax 통신으로 Q&A 페이지 작성
-- Q&A 페이지는 관리자만 추가, 수정, 삭제 가능
+- ajax 통신으로 댓글 쓰기, 수정, 삭제 & 관리자 모드 추가
+- ajax 통신으로 Q&A 페이지 관리자만 등록, 수정, 삭제 가능
